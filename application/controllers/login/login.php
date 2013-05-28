@@ -2,7 +2,7 @@
 
 class Login extends CI_Controller {
 
-    function index() {
+    function index() {  
         $this->load->helper("url");
         $this->load->helper("form");
         $this->load->library('form_validation');
@@ -23,13 +23,13 @@ class Login extends CI_Controller {
 
     function _autentica($login, $password) {
         $this->load->helper("url");
-        $this->load->model("login/login", "Login", TRUE);
-        $usuario = $this->Login->autentica($login, $password);
+        $this->load->model("login/login_m", "Login", TRUE);
+        $usuario = $this->Login->autentica($login, $password);        
         if($usuario){
-            
+            redirect('/login/usuario/'.$login.'/'.$password,'refresh');
         }
         else{
-            
+            echo "No eres usuario";
         }
         //redirect('/login/usuario/'.$login.'/'.$password,'refresh');
     }
