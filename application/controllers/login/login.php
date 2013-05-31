@@ -26,13 +26,27 @@ class Login extends CI_Controller {
         $this->load->model("login/login_m", "Login", TRUE);
         $usuario = $this->Login->autentica($login, $password);        
         if($usuario){
-            redirect('/login/usuario/'.$login.'/'.$password,'refresh');
+            $userData = array(
+                "id_cliente"=>$usuario->id_cliente,
+                "tipo_cliente_id_tipo_cliente"=>$usuario->tipo_cliente_id_tipo_cliente,
+                "nombre"=>$usuario->nombre,
+                "apellido"=>$usuario->apellido,
+                "empresa"=>$usuario->empresa,
+                "direccion"=>$usuario->direccion,
+                "rfc"=>$usuario->rfc,
+                "correo"=>$usuario->correo,
+            );
+            $this->load->library("session");
+            $this->session->set_userdata("userData",$userData);
+            redirect('/cliente/cliente/','refresh');
         }
         else{
-            echo "No eres usuario";
+            redirect('/nouser/nouser/' , 'refresh');
         }
         //redirect('/login/usuario/'.$login.'/'.$password,'refresh');
     }
+    
+    
 
 }
 

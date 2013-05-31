@@ -18,7 +18,7 @@
                 <h3 class="four column logo" style="color: #fff;"><?php echo anchor('inicio','FeedBack'); ?></h3>
                 <ul class="eight columns">
                     <li><?php echo anchor('inicio', 'Inicio'); ?></li>
-                    <li><?php echo anchor('inicio','Inicio'); ?></li>
+                    <!--<li><?php echo anchor('inicio','Inicio'); ?></li>-->
                     <li><button class="medium pretty primary btn icon-left icon-user"><?php echo anchor('login/login','Entrar a mi feed'); ?></button></li>
                 </ul>
             </div>

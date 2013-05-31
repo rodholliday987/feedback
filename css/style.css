@@ -1,8 +1,57 @@
 /*
-We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
-However, this blank file is available if you prefer
-*/
 
-div{
-    margin-bottom: 15px
+*/
+/**
+    Inicio de estilo mobile
+**/
+@media screen {
+    .btn{
+        width: 100%;
+    }
+    .btn input{
+        width: 100%;
+    }
+    .row{
+        margin-bottom: 3px;
+    }
+    .columns{
+        margin-bottom: 3px;
+    }
+    span{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
+
+/**
+    Fin de estilo mobile
+**/
+
+/***********************************************************************************************************************************/
+
+/**
+    Inicio de estilo desktop
+**/
+
+@media screen and (min-width:768px){
+    .btn{
+        width: auto;
+    }
+    .btn input{
+        width: auto;
+    }
+    
+    .row{
+        margin-bottom: 15px
+    }
+    span{
+        width: auto;
+    }
+    .columns{
+        margin-bottom: auto;
+    }
+}
+/**
+    Fin de estilo desktop
+**/
