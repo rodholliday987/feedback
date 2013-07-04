@@ -18,8 +18,8 @@ class Cliente extends CI_Controller {
         if($userData){
             $data["nombre"] = $userData['nombre'];
             $this->load->helper("url");
-            $this->load->view("common/header_v");        
-            $this->load->view("cliente/cuenta_v",$data);
+            $this->load->view("cliente/header_v",$data);        
+            $this->load->view("cliente/cuenta_v");
             $this->load->view("common/footer_v");
         }
         else{
